@@ -4,4 +4,20 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
                       http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+    <filter>
+        <filter-name>UrlRewriterFilter</filter-name>
+        <filter-class>org.tuckey.web.filters.urlrewrite.UrlRewriteFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>UrlRewriterFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <filter>
+        <filter-name>filter-dispatcher</filter-name>
+        <filter-class>com.xuan.FilterDispatcher</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>filter-dispatcher</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 </web-app>
